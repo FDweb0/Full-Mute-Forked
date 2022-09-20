@@ -1,4 +1,4 @@
-package live.teekamsuthar.mutify;
+package com.full.mute.ad.block.spotify;
 
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
@@ -74,7 +74,7 @@ public class Utils {
 //        deviceInfo += "\n>==================<";
         /* Fill it with Data */
         sendEmail.setData(Uri.parse("mailto:"));
-        sendEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{"teekam.suthar1@gmail.com"});
+        sendEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{"edowpodcast@gmail.com"});
         sendEmail.putExtra(Intent.EXTRA_SUBJECT, subject);
         sendEmail.putExtra(Intent.EXTRA_TEXT, deviceInfo);
         return sendEmail;

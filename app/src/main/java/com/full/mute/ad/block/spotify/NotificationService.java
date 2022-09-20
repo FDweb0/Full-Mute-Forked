@@ -1,4 +1,4 @@
-package live.teekamsuthar.mutify;
+package com.full.mute.ad.block.spotify;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -14,7 +14,7 @@ import androidx.core.app.NotificationCompat;
 
 public class NotificationService extends Service {
 
-    public static final String NOTIFICATION_CHANNEL_ID_SERVICE = "live.teekamsuthar.mutify.service";
+    public static final String NOTIFICATION_CHANNEL_ID_SERVICE = "com.full.mute.ad.block.spotify.service";
     public static final String NOTIFICATION_CHANNEL_ID_INFO = "Ad muting service";
     public static final String ACTION_STOP = "STOP_SERVICE";
 
@@ -24,7 +24,16 @@ public class NotificationService extends Service {
         // action to be added in the notification
         Intent intent = new Intent(this, StopServiceBroadcastReceiver.class);
         intent.putExtra("Action", ACTION_STOP);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = null;
+
+        if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.S){
+            pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+
+        }else {
+            pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        }
+
         NotificationCompat.Action action = new NotificationCompat.Action.Builder(R.drawable.ic_baseline_close_24, "Stop", pendingIntent).build();
 
         // create notification channel for devices above api 26/Oreo
@@ -33,8 +42,8 @@ public class NotificationService extends Service {
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID_SERVICE)
-                    .setContentTitle("Mutify Service")
-                    .setContentText("Mutify is running in the background.")
+                    .setContentTitle("Full Mute Service")
+                    .setContentText("Full Mute is running in the background.")
                     .setContentIntent(notificationPendingIntent())
                     .addAction(action)
                     .setSmallIcon(R.drawable.mutify_logo_without_bg);

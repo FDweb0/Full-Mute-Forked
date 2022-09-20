@@ -1,4 +1,4 @@
-package live.teekamsuthar.mutify;
+package com.full.mute.ad.block.spotify;
 
 public interface ReceiverCallback {
     // Declaration of the callback template function for the interface

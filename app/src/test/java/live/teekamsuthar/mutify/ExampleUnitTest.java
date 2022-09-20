@@ -1,4 +1,4 @@
-package live.teekamsuthar.mutify;
+package com.full.mute.ad.block.spotify;
 
 import org.junit.Test;
 

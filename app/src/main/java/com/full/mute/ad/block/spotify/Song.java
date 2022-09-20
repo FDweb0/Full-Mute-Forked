@@ -1,4 +1,4 @@
-package live.teekamsuthar.mutify;
+package com.full.mute.ad.block.spotify;
 
 public class Song {
     private final String id;

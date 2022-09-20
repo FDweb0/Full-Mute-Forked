@@ -1,8 +1,7 @@
-package live.teekamsuthar.mutify;
+package com.full.mute.ad.block.spotify;
 
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
-import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -38,6 +37,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
+import com.fulldive.startapppopups.PopupManager;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
@@ -63,12 +63,12 @@ import java.util.concurrent.TimeoutException;
 import static android.util.Log.i;
 import static com.google.android.play.core.install.model.ActivityResult.RESULT_IN_APP_UPDATE_FAILED;
 import static com.google.android.play.core.install.model.AppUpdateType.FLEXIBLE;
-import static live.teekamsuthar.mutify.StopServiceBroadcastReceiver.shouldCloseService;
-import static live.teekamsuthar.mutify.Utils.SPOTIFY_PACKAGE;
-import static live.teekamsuthar.mutify.Utils.getEmailIntent;
-import static live.teekamsuthar.mutify.Utils.getTimeStamp;
-import static live.teekamsuthar.mutify.Utils.getTimeStampFromDate;
-import static live.teekamsuthar.mutify.Utils.openApp;
+import static com.full.mute.ad.block.spotify.StopServiceBroadcastReceiver.shouldCloseService;
+import static com.full.mute.ad.block.spotify.Utils.SPOTIFY_PACKAGE;
+import static com.full.mute.ad.block.spotify.Utils.getEmailIntent;
+import static com.full.mute.ad.block.spotify.Utils.getTimeStamp;
+import static com.full.mute.ad.block.spotify.Utils.getTimeStampFromDate;
+import static com.full.mute.ad.block.spotify.Utils.openApp;
 
 public class MainActivity extends AppCompatActivity implements ReceiverCallback {
     // global vars
@@ -285,6 +285,21 @@ public class MainActivity extends AppCompatActivity implements ReceiverCallback 
         filter.addAction(SpotifyBroadcastReceiver.BroadcastTypes.METADATA_CHANGED);
         // register Spotify broadcast listener.
         registerReceiver(spotifyBroadcastReceiver, filter);
+        new PopupManager().onAppStarted(
+                this,
+                BuildConfig.APPLICATION_ID,
+                true,
+                true,
+                true,
+                0,
+                (action) -> {
+                    return null;
+                }
+        );
+
+
+
+
     }
 
     private void stopService() {
@@ -714,6 +729,7 @@ public class MainActivity extends AppCompatActivity implements ReceiverCallback 
         super.onDestroy();
         // unregister listener for In app update
         appUpdateManager.unregisterListener(listener);
+
     }
 
     private void notifyUserToUpdate() {

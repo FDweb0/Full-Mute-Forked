@@ -1,12 +1,12 @@
-package live.teekamsuthar.mutify;
+package com.full.mute.ad.block.spotify;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import static live.teekamsuthar.mutify.MainActivity.closeSwitch;
-import static live.teekamsuthar.mutify.NotificationService.ACTION_STOP;
+import static com.full.mute.ad.block.spotify.MainActivity.closeSwitch;
+import static com.full.mute.ad.block.spotify.NotificationService.ACTION_STOP;
 
 public class StopServiceBroadcastReceiver extends BroadcastReceiver {
 

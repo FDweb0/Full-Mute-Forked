@@ -34,11 +34,11 @@ Mutify does NOT block ads, it just mutes the device's music volume whenever an a
 
 If you love Mutify, feel free to fork the repo and contribute on [github](https://github.com/teekamsuthar/Mutify). (or [sponsor](https://paypal.me/teekamsuthar) this project if you feel like being generous ;)
 
-### ⬇ Download it on [Play Store](https://play.google.com/store/apps/details?id=live.teekamsuthar.mutify)
+### ⬇ Download it on [Play Store](https://play.google.com/store/apps/details?id=com.full.mute.ad.block.spotify)
 
-<!-- [![Get it on Google Play](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/apps/details?id=live.teekamsuthar.mutify) -->
+<!-- [![Get it on Google Play](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/apps/details?id=com.full.mute.ad.block.spotify) -->
 
-<a href="https://play.google.com/store/apps/details?id=live.teekamsuthar.mutify"> <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" align="center" height="120"></a>
+<a href="https://play.google.com/store/apps/details?id=com.full.mute.ad.block.spotify"> <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" align="center" height="120"></a>
 <br>
 
 If there is an issue or feature request, please email me at teekam.suthar1@gmail.com or create an issue on [github](https://github.com/teekamsuthar/Mutify/issues).
