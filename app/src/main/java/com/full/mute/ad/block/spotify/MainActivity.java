@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements ReceiverCallback 
     private ImageButton togglePlayPause;
     private LinearLayout mediaButtons;
     private Intent notificationService;
+
     private static SwitchMaterial adSwitch;
     private CardView tipsCardView;
     private SpotifyBroadcastReceiver spotifyBroadcastReceiver;
