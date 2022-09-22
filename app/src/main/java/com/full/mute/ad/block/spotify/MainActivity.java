@@ -107,7 +107,6 @@ public class MainActivity extends AppCompatActivity implements ReceiverCallback 
         // init notification service intent
         notificationService = new Intent(MainActivity.this, NotificationService.class);
         // init switch
-
         adSwitch = findViewById(R.id.adSwitch);
         adSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> checkSwitch(isChecked));
         // initialize all TextViews
