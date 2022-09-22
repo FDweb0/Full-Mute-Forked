@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements ReceiverCallback 
 
     PreferenceActivity screen;
 
+
     private static SwitchMaterial adSwitch;
     private CardView tipsCardView;
     private SpotifyBroadcastReceiver spotifyBroadcastReceiver;
