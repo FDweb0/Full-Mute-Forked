@@ -7,7 +7,7 @@
     <string name="unmute">Unmute</string>
     <string name="titleText">Tips</string>
     <string name="toggle_tips">Hide Tips</string>
-    <string name="warningText">-> Allow Mutify to run in background and disable any battery restriction features for Mutify to work properly.</string>
+    <string name="warningText">-> Allow Full Mute to run in background and disable any battery restriction features for Full Mute to work properly.</string>
     <string name="warningText0">-> If you encounter any delay in muting/unmuting try disabling cross-fade between songs from Spotify settings.</string>
     <string name="warningText1">-> Ads playing after you manually skip a track cannot be muted. You can manually press mute/unmute in that case.</string>
     <string name="warningText2">-> Please Contact Us, if you face any other issues.</string>
@@ -23,10 +23,12 @@
     <string name="mute_timer_cancelled">Mute timer cancelled</string>
     <string name="device_muted">Device was Muted</string>
     <string name="dialog_title">Enable Device Broadcast Status</string>
-    <string name="dialog_message">Please enable \n\'Device Broadcast Status\'\n in Spotify settings for Mutify to work. \nMutify won\'t work without it.</string>
+    <string name="dialog_message">Please enable \n\'Device Broadcast Status\'\n in Spotify settings for Full Mute to work. \nFull Mute won\'t work without it.</string>
     <string name="dialog_positive_btn">Open Spotify</string>
     <string name="dialog_negative_btn">I have enabled it</string>
     <string name="contact_us">Contact Us</string>
+    <string name="support_us">Support Us</string>
+
     <string name="auto_launch_spotify">Auto-launch Spotify</string>
     <string name="music_image">Music Image</string>
 </resources>

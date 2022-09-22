@@ -75,7 +75,7 @@ public class SpotifyBroadcastReceiver extends BroadcastReceiver {
                 break;
 
             case BroadcastTypes.QUEUE_CHANGED:
-                // Sent only as a notification, Mutify app may want to respond accordingly.
+                // Sent only as a notification, Full Mute app may want to respond accordingly.
                 // Toast.makeText(context, "queue changed", Toast.LENGTH_SHORT).show();
                 break;
         }

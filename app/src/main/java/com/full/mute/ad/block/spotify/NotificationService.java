@@ -46,7 +46,7 @@ public class NotificationService extends Service {
                     .setContentText("Full Mute is running in the background.")
                     .setContentIntent(notificationPendingIntent())
                     .addAction(action)
-                    .setSmallIcon(R.drawable.mutify_logo_without_bg);
+                    .setSmallIcon(R.drawable.full_mute_logo_without_bg);
             startForeground(101, builder.build());
         }
         Toast.makeText(this, "Enjoy your ad-free music ;)", Toast.LENGTH_SHORT).show();

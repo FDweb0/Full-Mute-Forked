@@ -9,6 +9,8 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 
+import com.squareup.leakcanary.BuildConfig;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -62,7 +64,7 @@ public class Utils {
 
     public static Intent getEmailIntent() {
         Intent sendEmail = new Intent(Intent.ACTION_SENDTO);
-        String subject = "RE: Mutify feedback/issues";
+        String subject = "RE: Full Mute feedback/issues";
         String deviceInfo = "Write your query below⬇ \n\n\n\n\n\n\n\n\n";
         deviceInfo += "\n>======(please keep this info)=======<";
         deviceInfo += "\n Version code: " + BuildConfig.VERSION_CODE;

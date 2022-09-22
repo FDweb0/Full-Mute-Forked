@@ -93,7 +93,7 @@
     +
 
     <style name="ToolbarTheme" parent="Widget.AppCompat.ActionBar">
-        <item name="logo">@drawable/mutify_logo_with_bg</item>
+        <item name="logo">@drawable/full_mute_logo_with_bg</item>
         <item name="titleTextColor">?android:attr/textColorPrimary</item>
         <item name="android:colorControlNormal">?attr/colorControlNormal</item>
         <item name="android:background">@color/actionBarColor</item>

@@ -15,6 +15,8 @@ import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Gravity;
@@ -38,6 +40,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
 import com.fulldive.startapppopups.PopupManager;
+import com.fulldive.startapppopups.donation.DonationManager;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
@@ -76,6 +79,8 @@ public class MainActivity extends AppCompatActivity implements ReceiverCallback 
     private ImageButton togglePlayPause;
     private LinearLayout mediaButtons;
     private Intent notificationService;
+
+    PreferenceActivity screen;
 
     private static SwitchMaterial adSwitch;
     private CardView tipsCardView;
@@ -505,6 +510,26 @@ public class MainActivity extends AppCompatActivity implements ReceiverCallback 
             /* Send it off to the Activity-Chooser */
             startActivity(Intent.createChooser(sendEmail, "Choose an email app to send your feedback!"));
         }
+        if (id == R.id.support_us) {
+
+
+            Preference donateUs = screen.findPreference("donate_us");
+            if (donateUs != null) {
+                donateUs.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        DonationManager.INSTANCE.purchaseFromSettings(
+                                MainActivity.this, () -> {
+                                    return null;
+                                }, () -> {
+                                    new PopupManager().showDonationSuccess(MainActivity.this);
+                                    return null;
+                                });
+                        return true;
+                    }
+                });
+            }
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -653,7 +678,7 @@ public class MainActivity extends AppCompatActivity implements ReceiverCallback 
             Toast.makeText(this, "Something went wrong!", Toast.LENGTH_SHORT).show();
         }
 
-        // TODO: implement in-app review in later versions of Mutify
+        // TODO: implement in-app review in later versions of Full Mute
 //      // ReviewManager manager = new FakeReviewManager(this); // to fake the behaviour
 //      // ReviewManager manager = ReviewManagerFactory.create(this);
 //        Task<ReviewInfo> request = manager.requestReviewFlow();
@@ -712,7 +737,7 @@ public class MainActivity extends AppCompatActivity implements ReceiverCallback 
                 Log.d(IN_APP_UPDATE, "Update Downloaded");
                 break;
             case InstallStatus.FAILED:
-                Toast.makeText(this, "Failed to Install an Update for Mutify…", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Failed to Install an Update for Full Mute…", Toast.LENGTH_LONG).show();
                 Log.d(IN_APP_UPDATE, "Failed");
                 break;
             // for logging purpose only

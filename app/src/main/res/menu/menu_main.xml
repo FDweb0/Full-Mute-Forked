@@ -25,4 +25,9 @@
         android:id="@+id/contact_us"
         android:title="@string/contact_us"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/support_us"
+        android:title="@string/support_us"
+        app:showAsAction="never" />
 </menu>
